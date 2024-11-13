@@ -1,0 +1,11 @@
+<h1 class="flat-title"><%= @flat.name %></h1>
+<img src="<%= @flat.image_url %>" alt="<%= @flat.name %>" class="flat-image-detail">
+<p class="flat-detail"><strong>Address:</strong> <%= @flat.address %></p>
+<p class="flat-detail"><strong>Number of guests:</strong> <%= @flat.number_of_guests %></p>
+<p class="flat-detail"><strong>Price per Night:</strong> <%= @flat.price_per_night %>€</p>
+
+<div class="flat-actions">
+  <%= link_to "Delete", flat_path(@flat.id), data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "btn btn-delete" %>
+  <%= link_to "Edit this Flat", edit_flat_path(@flat), class: "btn btn-edit" %>
+  <%= link_to "Back to Flats", flats_path, class: "btn btn-back" %>
+</div>
